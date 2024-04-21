@@ -1,0 +1,1 @@
+SELECT DISTINCT state FROM sql_store.customers;
