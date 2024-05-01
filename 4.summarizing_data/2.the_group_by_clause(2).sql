@@ -1,3 +1,4 @@
+USE sql_invoicing;
 select 
       c.state,
       c.city,
