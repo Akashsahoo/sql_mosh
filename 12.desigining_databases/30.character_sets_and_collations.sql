@@ -1,0 +1,8 @@
+-- 99.99 % we never use it-- 
+SHOW CHARSET;
+CREATE /ALTER  DATABASE db_name
+CHARACTER SET latin1;
+
+
+CREATE/ALTER TABLE table1
+CHARACTER SET latin1

@@ -1,0 +1,49 @@
+Table user {
+  id int
+  user_name varchar
+  password  varchar
+  role_type varchar
+  }
+
+Table role {
+  id int
+  name varchar
+}
+
+ref:role.id < user.role_type
+
+Table customer {
+  id int
+  name varchar
+  email varchar
+  phone varchar
+  }
+
+
+Table movie {
+  id int
+  barcode varchar
+  daily_rental_rate decimal
+  number_in_stock int
+
+}
+
+Table rental {
+id int
+rent_date date
+return_date date
+customer_id int
+movie_id int
+coupon_id int 
+}
+
+Table coupon {
+
+id int
+code varchar 
+description varchar
+discount decimal
+} 
+Ref : rental.customer_id > customer.id
+Ref: rental.movie_id > movie.id
+Ref : rental.coupon_id > coupon.id

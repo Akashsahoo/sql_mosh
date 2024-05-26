@@ -1,0 +1,67 @@
+Table passengers {
+  id int
+  first_name varchar
+  last_name varchar
+  date_of_birth date
+  }
+
+Table flights {
+  id int
+  from varchar
+  from_airport_id int
+  to varchar 
+  to_airport_id int
+  departure_time datetime
+  arrival_time datetime
+  distance_in_miles int
+  duration time
+  airline int
+
+}
+
+// passengers books flight
+Table tickets
+{
+  id int 
+  ticket_number uniqueidentifier 
+  mobile_number varchar 
+  passenger_id int
+  flight_id int
+  price decimal(5,2)
+  class int
+}
+
+Table ticket_type {
+  id int
+  name varchar 
+}
+
+Ref : tickets.passenger_id > passengers.id
+Ref : tickets.flight_id > flights.id
+Ref : tickets.class  > ticket_type.id
+
+
+
+Table airport 
+{
+  id int
+  iata_code varchar
+  name varchar
+  city varchar
+  state varchar
+  country varchar
+
+}
+
+
+
+Table airline {
+  id int
+  code varchar
+
+}
+
+Ref : flights.airline <> airline.id
+
+Ref : airport.id <> flights.from_airport_id
+Ref : airport.id <> flights.to_airport_id

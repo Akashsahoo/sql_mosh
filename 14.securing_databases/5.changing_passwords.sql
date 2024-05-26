@@ -1,0 +1,1 @@
+SET PASSWORD FOR john = '1234';
